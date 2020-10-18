@@ -1,4 +1,4 @@
-package com.menumanagement;
+package com.menumanagement.config;
 
 import javax.sql.DataSource;
 
@@ -13,10 +13,10 @@ public class JpaConfig {
     public DataSource getDataSource() 
     {
         DataSourceBuilder<DataSource> dataSourceBuilder = (DataSourceBuilder<DataSource>) DataSourceBuilder.create();
-        dataSourceBuilder.driverClassName("");
-        dataSourceBuilder.url("jdbc:mysql://localhost/testdb");
-        dataSourceBuilder.username("sa");
-        dataSourceBuilder.password("");
+        dataSourceBuilder.driverClassName("com.mysql.cj.jdbc.Driver");
+        dataSourceBuilder.url("jdbc:mysql://localhost:3306/menu_management?serverTimezone=Europe/Sofia");
+        dataSourceBuilder.username("developer");
+        dataSourceBuilder.password("dev_pass");
         return dataSourceBuilder.build();
     }
 }
